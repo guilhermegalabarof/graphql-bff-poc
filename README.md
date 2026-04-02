@@ -1,17 +1,18 @@
 # Project to learn GRAPHql for frontend (also BFF with GRAPHql which includes the backend part)
 
 ## the main goal of this poc is to:
--[ ] Create a web app that fetch graphql from public api
--[ ] create my own backend for fetching a rest api and serving a graphql endpoint
--[ ] use my own BFF (above) to get the data creating a graphql query.
--[ ] backend can make two+ requests and serve one single graphql endpoint where frontend consumes multiple queries wity one request.
+- [x] Create a web app that fetch graphql from public api
+- [ ] create my own backend for fetching a rest api and serving a graphql endpoint
+- [ ] use my own BFF (above) to get the data creating a graphql query.
+- [ ] backend can make two+ requests and serve one single graphql endpoint where frontend consumes multiple queries wity one request.
 
 
 ## TODO ->
  - [x] https://www.apollographql.com/docs/react
   - [x] npm install @apollo/client graphql rxjs
   - [x] Configure local app.
-  - [ ] add typescript to it.
+  - [x] add typescript to it.
+  - [ ] add codegen
 
 
   ### cool things
