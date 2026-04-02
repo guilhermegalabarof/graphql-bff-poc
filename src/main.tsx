@@ -1,0 +1,32 @@
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import "./index.css";
+import App from "./App.tsx";
+import { client } from "./lib/apollo-client.ts";
+import { gql } from "@apollo/client";
+import { ApolloProvider } from "@apollo/client/react";
+
+// const client = ...
+
+client
+  .query({
+    query: gql`
+      query GetLocations {
+        locations {
+          id
+          name
+          description
+          photo
+        }
+      }
+    `,
+  })
+  .then((result) => console.log(result));
+
+createRoot(document.getElementById("root")!).render(
+  <StrictMode>
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>
+  </StrictMode>,
+);
