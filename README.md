@@ -1,5 +1,15 @@
 # Project to learn GRAPHql for frontend (also BFF with GRAPHql which includes the backend part)
 
+## How to run
+
+```bash
+npm run dev
+```
+
+Starts both BFF and app in parallel. BFF runs on `http://localhost:4000`, app on `http://localhost:5173`.
+
+---
+
 ## the main goal of this poc is to:
 - [x] Create a web app that fetch graphql from public api
 - [ ] create my own backend for fetching a rest api and serving a graphql endpoint

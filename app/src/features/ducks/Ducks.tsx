@@ -8,21 +8,24 @@ interface Props {
 export function Ducks({ onSelected }: Props) {
   const { loading, error, data } = useQuery(GET_DUCKS);
 
-  if (loading) return "Loading...";
-  if (error) return `Error! ${error.message}`;
+  if (loading) return <p aria-live="polite">Loading...</p>;
+  if (error) return <p role="alert">`Error! ${error.message}`</p>;
 
   if (!data) {
     return null;
   }
 
   return (
-    <select name="duck" onChange={onSelected}>
-      <option value="">Select</option>
-      {data.ducks.map((duck) => (
-        <option key={duck.id} value={duck.id}>
-          {duck.breed}
-        </option>
-      ))}
-    </select>
+    <>
+      <label htmlFor="duck-select">Choose a duck breed</label>
+      <select id="duck-select" name="duck" onChange={onSelected}>
+        <option value="">Select</option>
+        {data.ducks.map((duck) => (
+          <option key={duck.id} value={duck.id}>
+            {duck.breed}
+          </option>
+        ))}
+      </select>
+    </>
   );
 }

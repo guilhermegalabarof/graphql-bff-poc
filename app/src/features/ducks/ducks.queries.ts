@@ -1,13 +1,15 @@
 import { gql } from "@apollo/client";
 import type { TypedDocumentNode } from "@apollo/client";
 
-type Ducks = {
+type Duck = {
   id: string;
   breed: string;
 };
 
+type DuckWithPhoto = Duck & { photo: string };
+
 type GetDucksQuery = {
-  ducks: Ducks[];
+  ducks: Duck[];
 };
 
 type GetDucksQueryVariables = Record<string, never>;
@@ -25,17 +27,14 @@ export const GET_DUCKS: TypedDocumentNode<
 `;
 
 type GetDuckPhotoQuery = {
-  duck: {
-    id: string;
-    photo: string;
-  };
+  duck: DuckWithPhoto;
 };
 
 type GetDuckPhotoQueryVariables = {
   id: string;
 };
 
-export const GET_DUCK_PHOTO: TypedDocumentNode<
+export const GET_DUCK: TypedDocumentNode<
   GetDuckPhotoQuery,
   GetDuckPhotoQueryVariables
 > = gql`
@@ -43,6 +42,7 @@ export const GET_DUCK_PHOTO: TypedDocumentNode<
     duck(id: $id) {
       id
       photo
+      breed
     }
   }
 `;
