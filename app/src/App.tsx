@@ -12,6 +12,10 @@ function App() {
     <>
       <Ducks onSelected={handleSelect} />
       <Duck duck={duck} />
+      <p>
+        this is are not real images of those fake breed of ducks, IDK that much
+        yet
+      </p>
     </>
   );
 }

@@ -12,7 +12,7 @@
   - [x] npm install @apollo/client graphql rxjs
   - [x] Configure local app.
   - [x] add typescript to it.
-  - [ ] add codegen
+  - [ ] add codegen?
 
 
   ### cool things
@@ -20,19 +20,13 @@
   can have a custom fetchPolicy for cache
   can be refetched easily passing variables or getting refetch param
   refetch bypass cache.
+  we can get all items of an array, but when we want a property, in our bff it will trigger another 
+  request because we asked for that specific item, this saves so much overfetching.
    
 
-
-And then answer this:
-1. Queries e mutations no cliente
-2. Fragments e tipagem com codegen
-3. Schema stitching / federation no BFF
-4. N+1 problem e DataLoader (bônus enorme)
-5. Cache com Apollo Client ou urql
-6. benefits of having a BFF and also having it with GRAPHql.
-7. how auth works in this system.
-8. how would be to integrate this in a SSR or React Server Component
-9. and last but not least, when not use this approach and why.
+#### things to learn
+- [x] queries and variables
+- [ ] mutations
 
 
 ### Glossary:
