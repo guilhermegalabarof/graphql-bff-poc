@@ -1,17 +1,23 @@
-import { Duck, Ducks } from "@/features/ducks/";
+import { Duck, Breeds, BreedDucks } from "@/features/ducks/";
 import { useState } from "react";
 
 function App() {
-  const [duck, setDuck] = useState("");
+  const [breedId, setBreedId] = useState("");
+  const [currentDuck, setCurrentDuck] = useState("");
 
-  const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setDuck(e.target.value);
+  const handleBreedSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setBreedId(e.target.value);
   };
 
   return (
     <>
-      <Ducks onSelected={handleSelect} />
-      <Duck duck={duck} />
+      <Breeds onSelected={handleBreedSelect} />
+      <BreedDucks
+        breedId={breedId}
+        selectedDuckId={currentDuck}
+        onDuckSelected={setCurrentDuck}
+      />
+      <Duck duck={currentDuck} />
       <p>
         this is are not real images of those fake breed of ducks, IDK that much
         yet

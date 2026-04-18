@@ -2,7 +2,8 @@
   "name": "ducks-graphql-root",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"npm run dev --prefix bff\" \"npm run dev --prefix app\""
+    "dev": "concurrently \"npm run dev --prefix bff\" \"npm run dev --prefix app\"",
+    "build": "concurrently \"npm run build --prefix bff\" \"npm run build --prefix app\""
   },
   "devDependencies": {
     "concurrently": "^9.2.1"
